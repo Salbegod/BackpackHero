@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/healer_m.png-6428bd4db29fc749e9f2fc8a9382e239.stex"
+path="res://.import/healer_m.png-118c9574ef82e462a24029a9b7dd3ac2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/healer_m.png"
-dest_files=[ "res://.import/healer_m.png-6428bd4db29fc749e9f2fc8a9382e239.stex" ]
+source_file="res://assets/sprites/player/healer_m.png"
+dest_files=[ "res://.import/healer_m.png-118c9574ef82e462a24029a9b7dd3ac2.stex" ]
 
 [params]
 

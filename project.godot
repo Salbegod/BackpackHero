@@ -14,6 +14,10 @@ config/name="Backpack Hero"
 run/main_scene="res://Overworld.tscn"
 config/icon="res://icon.png"
 
+[global]
+
+Export=false
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
