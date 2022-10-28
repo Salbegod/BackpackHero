@@ -7,8 +7,3 @@ func _physics_process(_delta):
 	var movement := input_vector.normalized()
 	
 	move_and_slide(speed * movement)
-
-func _process(delta):
-	if (Input.is_physical_key_pressed(KEY_E)):
-		
-		pass

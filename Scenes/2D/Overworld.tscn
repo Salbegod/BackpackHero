@@ -617,4 +617,5 @@ tile_data = PoolIntArray( -524264, 0, 2, -393218, 0, 0, -458745, 0, 1, -458708, 
 position = Vector2( -17.5, 352 )
 shape = SubResource( 54 )
 
+[connection signal="scene_changed" from="." to="PlayerCharacter" method="_on_Overworld_scene_changed"]
 [connection signal="area_entered" from="Area2DOverworld1" to="Area2DOverworld1" method="_on_Area2DOverworld1_area_entered"]
