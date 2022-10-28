@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://assets/BeatEmUp/Backgrounds/forest_clearing__f2u_bg__by_barbull_ddsggkp-350t.jpg" type="Texture" id=1]
+[ext_resource path="res://Scripts/Scene.gd" type="Script" id=1]
+[ext_resource path="res://assets/BeatEmUp/Backgrounds/forest_clearing__f2u_bg__by_barbull_ddsggkp-350t.jpg" type="Texture" id=2]
 
 [sub_resource type="PlaneMesh" id=1]
 
@@ -12,10 +13,12 @@ data = PoolVector3Array( 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0,
 [sub_resource type="ConcavePolygonShape" id=4]
 data = PoolVector3Array( 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1 )
 
-[node name="BeatEmUp_01" type="Spatial"]
+[node name="BeatEmUp" type="Spatial"]
+script = ExtResource( 1 )
+scene_name = "BeatEmUp"
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.898794, 0.438371, 0, -0.438371, 0.898794, 0.0264497, 0.954417, 1.93566 )
