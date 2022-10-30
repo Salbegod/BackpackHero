@@ -29,6 +29,25 @@ func _process(delta):
 	motion.x = Input.get_axis("ui_left", "ui_right") * speed
 	motion.z = Input.get_axis("ui_up", "ui_down") * speed
 	
+	_flip()
+	_animations()
 	
 func _physics_process(delta):
 	motion = move_and_slide(motion, Vector3.UP)
+
+
+func _flip() -> void:
+	if motion.x != 0:
+		sprite.flip_h = false if motion.x > 0 else true
+
+func _animations() -> void:
+	#if is_on_floor():
+	if motion.x != 0 or motion.z != 0:
+		_set_animation("Walk")
+	else:
+		_set_animation("Idle")
+	
+func _set_animation(anim: String) -> void:
+	if animation != anim:
+		animation = anim
+		animator.play(animation)
