@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/BeatEmUp/Player/PersonagemPlaceholder/felicia/walk.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/3D/Player.gd" type="Script" id=4]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.3, 0.7, 0.2 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "Attack_1"
+length = 0.6
+
+[sub_resource type="Animation" id=3]
+resource_name = "Hit"
+
+[sub_resource type="Animation" id=4]
+resource_name = "Idle"
+length = 2.0
+loop = true
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+
+[sub_resource type="Animation" id=6]
+resource_name = "Walk"
+length = 1.6
+loop = true
+
+[node name="Player" type="KinematicBody"]
+script = ExtResource( 4 )
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.502887, 0 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 240, 110, 100 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0 )
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Attack_1 = SubResource( 2 )
+anims/Hit = SubResource( 3 )
+anims/Idle = SubResource( 4 )
+anims/RESET = SubResource( 5 )
+anims/Walk = SubResource( 6 )
