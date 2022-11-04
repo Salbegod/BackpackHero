@@ -10,6 +10,8 @@ onready var sprite : Sprite3D = get_node("Sprite3D")
 onready var animator : AnimationPlayer = get_node("AnimationPlayer")
 onready var speed := SPEED
 
+signal scene_changed(scene_name)
+
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -35,6 +37,9 @@ func _process(delta):
 func _physics_process(delta):
 	motion = move_and_slide(motion, Vector3.UP)
 
+func _input(event):
+	if event.is_action_pressed("scene_switch"):
+		emit_signal("scene_changed", "BeatEmUp")
 
 func _flip() -> void:
 	if motion.x != 0:

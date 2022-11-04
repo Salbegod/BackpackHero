@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/BeatEmUp/Backgrounds/forest_clearing__f2u_bg__by_barbull_ddsggkp-350t.jpg" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/Scene.gd" type="Script" id=3]
 
 [sub_resource type="PlaneMesh" id=1]
 
@@ -13,7 +14,9 @@ data = PoolVector3Array( 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0,
 [sub_resource type="ConcavePolygonShape" id=4]
 data = PoolVector3Array( 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1 )
 
-[node name="BeatEmUp_01" type="Spatial"]
+[node name="BeatEmUp" type="Spatial"]
+script = ExtResource( 3 )
+scene_name = "BeatEmUp"
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.514603, -0.97963 )
@@ -54,5 +57,7 @@ mesh = SubResource( 3 )
 [node name="CollisionShape" type="CollisionShape" parent="WallDown/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
+[node name="PlayerCharacter" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.23935, -1.16898, -0.0568837 )
+
+[connection signal="scene_changed" from="PlayerCharacter" to="." method="_on_PlayerCharacter_scene_changed"]

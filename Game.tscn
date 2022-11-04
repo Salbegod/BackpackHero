@@ -1,12 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scenes/Overworld.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scripts/Game.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/BeatEmUp.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/SceneSwitcher.gd" type="Script" id=2]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="Overworld" parent="." instance=ExtResource( 1 )]
-
-[node name="BeatEmUp_01" parent="." instance=ExtResource( 3 )]
