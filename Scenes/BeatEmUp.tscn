@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/BeatEmUp/Backgrounds/forest_clearing__f2u_bg__by_barbull_ddsggkp-350t.jpg" type="Texture" id=1]
-[ext_resource path="res://Scenes/3D/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
 
 [sub_resource type="PlaneMesh" id=1]
 
