@@ -62,7 +62,7 @@ shape = SubResource( 4 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.23935, -1.16898, -0.0568837 )
 
 [node name="KinematicBody" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.88461, -0.878297, -0.472292 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.581184, -1.17178, -0.147406 )
 script = ExtResource( 5 )
 
 [connection signal="scene_changed" from="PlayerCharacter1" to="." method="_on_PlayerCharacter_scene_changed"]

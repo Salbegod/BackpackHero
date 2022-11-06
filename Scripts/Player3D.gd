@@ -5,6 +5,7 @@ const GRAVITY := 9.8
 
 var motion := Vector3()
 var animation := ""
+var enable = true
 
 onready var sprite : Sprite3D = get_node("Sprite3D")
 onready var animator : AnimationPlayer = get_node("AnimationPlayer")
@@ -25,34 +26,53 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
 	if not is_on_floor():
 		motion.y -= GRAVITY * delta
 	
-	motion.x = Input.get_axis("ui_left", "ui_right") * speed
-	motion.z = Input.get_axis("ui_up", "ui_down") * speed
 	
-	_flip()
-	_animations()
 	
+	#chamar função para trocar personagem aqui
+	if(Input.is_action_pressed("Char1")):
+		enable = true
+	if(Input.is_action_pressed("Char2")):
+		enable = false
+	
+	if(enable):
+		motion.x = Input.get_axis("ui_left", "ui_right") * speed
+		motion.z = Input.get_axis("ui_up", "ui_down") * speed
+		
+		_flip()
+		_animations()
+	
+
+
+	
+
 func _physics_process(delta):
-	motion = move_and_slide(motion, Vector3.UP)
+	if(enable):
+		motion = move_and_slide(motion, Vector3.UP)
 
 func _input(event):
-	if event.is_action_pressed("scene_switch"):
-		emit_signal("scene_changed", "BeatEmUp")
+	if(enable):
+		if event.is_action_pressed("scene_switch"):
+			emit_signal("scene_changed", "BeatEmUp")
 
 func _flip() -> void:
-	if motion.x != 0:
-		sprite.flip_h = false if motion.x > 0 else true
+	if(enable):
+		if motion.x != 0:
+			sprite.flip_h = false if motion.x > 0 else true
 
 func _animations() -> void:
-	#if is_on_floor():
-	if motion.x != 0 or motion.z != 0:
-		_set_animation("Walk")
-	else:
-		_set_animation("Idle")
+	if(enable):
+		#if is_on_floor():
+		if motion.x != 0 or motion.z != 0:
+			_set_animation("Walk")
+		else:
+			_set_animation("Idle")
 	
 func _set_animation(anim: String) -> void:
+	
 	if animation != anim:
 		animation = anim
 		animator.play(animation)
