@@ -34,9 +34,9 @@ func _process(delta):
 	if(Input.is_action_pressed("Char1")):
 		enable = false
 	if(Input.is_action_pressed("Char2")):
-		enable = true
-	if(Input.is_action_pressed("Char3")):
 		enable = false
+	if(Input.is_action_pressed("Char3")):
+		enable = true
 	
 	if(enable):
 		motion.x = Input.get_axis("ui_left", "ui_right") * speed
