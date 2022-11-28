@@ -2,7 +2,7 @@ extends KinematicBody
 
 const GRAVITY := 9.8
 
-export(int) var speed_default := 50
+export(int) var speed_default := 10
 
 var motion := Vector3()
 var death := false
@@ -13,10 +13,13 @@ var z_direction := 0.0
 var animation := ""
 var facing_right = false
 
+var playerList = ["PlayerCharacter1", "PlayerCharacter2", "PlayerCharacter3"]
+var randPos := randi() % 2 - 0
+
 onready var sprite : Sprite3D = get_node("Sprite3D")
 onready var animator : AnimationPlayer = get_node("AnimationPlayer")
 onready var speed := speed_default
-onready var player : KinematicBody = get_parent().get_node("PlayerCharacter1")
+onready var player : KinematicBody = get_parent().get_node(playerList[randPos])
 
 
 
