@@ -14,12 +14,12 @@ var animation := ""
 var facing_right = false
 
 var playerList = ["PlayerCharacter1", "PlayerCharacter2", "PlayerCharacter3"]
-var randPos := randi() % 2 - 0
+var randPos := randi()
 
 onready var sprite : Sprite3D = get_node("Sprite3D")
 onready var animator : AnimationPlayer = get_node("AnimationPlayer")
 onready var speed := speed_default
-onready var player : KinematicBody = get_parent().get_node(playerList[randPos])
+onready var player : KinematicBody = get_parent().get_node(playerList[randPos % 3])
 
 
 
@@ -53,7 +53,7 @@ func _movement(delta) -> void:
 		if walk_timer > rand_range(1,2):
 			z_direction = randi() % 3 - 1
 			walk_timer = 0
-		if abs(target_distance.x) < 1:
+		if abs(target_distance.x) < 0.5:
 			x_direction = 0
 			
 		motion = Vector3(x_direction, 0, z_direction)
