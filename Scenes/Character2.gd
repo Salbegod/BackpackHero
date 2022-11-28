@@ -11,6 +11,11 @@ onready var sprite : Sprite3D = get_node("Sprite3D")
 onready var animator : AnimationPlayer = get_node("AnimationPlayer")
 onready var speed := SPEED
 
+
+var timer := 0.5
+var cooldown := 1.6
+var attacking := false
+
 signal scene_changed(scene_name)
 
 
@@ -38,8 +43,14 @@ func _process(delta):
 		motion.x = Input.get_axis("ui_left", "ui_right") * speed
 		motion.z = Input.get_axis("ui_up", "ui_down") * speed
 		
+		if Input.is_action_just_pressed("ui_attack") and timer > 0.3:
+			attacking = true
+			timer = 0
+			
+		
 		_flip()
-		_animations()
+		_animations(delta)
+	
 	
 
 
@@ -59,13 +70,18 @@ func _flip() -> void:
 		if motion.x != 0:
 			sprite.flip_h = false if motion.x > 0 else true
 
-func _animations() -> void:
-	
+func _animations(delta: float) -> void:
 	#if is_on_floor():
-	if motion.x != 0 or motion.z != 0:
-		_set_animation("Walk")
+	if attacking:
+		_set_animation("Attack")
+		timer += delta
+		if timer >= cooldown:
+			attacking = false
 	else:
-		_set_animation("Idle")
+		if motion.x != 0 or motion.z != 0:
+			_set_animation("Walk")
+		else:
+			_set_animation("Idle")
 	
 func _set_animation(anim: String) -> void:
 	
