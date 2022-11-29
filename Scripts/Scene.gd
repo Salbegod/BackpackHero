@@ -15,3 +15,5 @@ func load_scene_parameters(new_scene_parameters: Dictionary):
 
 func _on_PlayerCharacter_scene_changed(scene_name):
 	emit_signal("scene_changed",scene_name)
+
+

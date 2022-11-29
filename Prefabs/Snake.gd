@@ -18,7 +18,6 @@ var randPos := randi()
 
 var health = 50
 
-var t = Timer.new()
 
 onready var sprite : Sprite3D = get_node("Sprite3D")
 onready var animator : AnimationPlayer = get_node("AnimationPlayer")

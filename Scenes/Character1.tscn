@@ -121,3 +121,5 @@ anims/Hit = SubResource( 3 )
 anims/Idle = SubResource( 4 )
 anims/RESET = SubResource( 5 )
 anims/Walk = SubResource( 6 )
+
+[connection signal="scene_changed" from="." to="." method="_on_Player_scene_changed"]

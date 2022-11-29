@@ -56,9 +56,9 @@ func _physics_process(delta):
 		motion = move_and_slide(motion, Vector3.UP)
 
 func _input(event):
-	if(enable):
-		if event.is_action_pressed("scene_switch"):
-			emit_signal("scene_changed", "BeatEmUp")
+	if event.is_action_pressed("scene_switch"):
+		_on_Player_scene_changed("BeatEmUp")
+		#emit_signal("scene_changed", "BeatEmUp")
 
 func _flip() -> void:
 	if(enable):
@@ -78,3 +78,7 @@ func _set_animation(anim: String) -> void:
 	if animation != anim:
 		animation = anim
 		animator.play(animation)
+
+
+func _on_Player_scene_changed(scene_name):
+	emit_signal("scene_changed", scene_name)

@@ -20,7 +20,7 @@ func _randomEncounter(delta) -> void:
 	walk_timer += delta
 	if walk_timer > rand_range(1,5):
 		chance = rand_range(0, 100)
-		if chance <= 20:
+		if chance <= 10:
 			  emit_signal("scene_changed", "Overworld")
 		
 		walk_timer = 0
