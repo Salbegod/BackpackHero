@@ -18,6 +18,8 @@ var randPos := randi()
 
 var health = 50
 
+var t = Timer.new()
+
 onready var sprite : Sprite3D = get_node("Sprite3D")
 onready var animator : AnimationPlayer = get_node("AnimationPlayer")
 onready var speed := speed_default
@@ -65,11 +67,16 @@ func takeDamage(damage: int) -> void:
 	if death:
 		return
 	health = max(0, health - damage)
+	sprite.modulate = Color(1, 0, 0)
+	yield(get_tree().create_timer(0.5), "timeout")
+	sprite.modulate = Color(1, 1, 1)
 	if health <= 0:
 		_death()
+	
 
 func _death() -> void:
 	queue_free()
+	emit_signal("scene_changed", "BeatEmUp")
 
 func _flip() -> void:
 	facing_right = true if player.transform.origin.x > transform.origin.x else false

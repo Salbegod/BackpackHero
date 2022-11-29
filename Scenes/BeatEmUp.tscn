@@ -30,7 +30,7 @@ projection = 1
 size = 3.0
 
 [node name="Ground" type="MeshInstance" parent="."]
-transform = Transform( 4, 0, 0, 0, 1, 0, 0, 0, 2, 0, -1.41705, 0 )
+transform = Transform( 4, 0, 0, 0, 1, 0, 0, 0, 2, 0, -0.928842, 0 )
 visible = false
 mesh = SubResource( 1 )
 
@@ -40,7 +40,7 @@ mesh = SubResource( 1 )
 shape = SubResource( 2 )
 
 [node name="WallUp" type="MeshInstance" parent="."]
-transform = Transform( 3, 0, -4.37114e-08, -1.31134e-07, 1.91069e-15, -1, 0, 1, 1.91069e-15, 0, -0.52115, -0.800148 )
+transform = Transform( 3, 0, -4.37114e-08, -1.31134e-07, 1.91069e-15, -1, 0, 1, 1.91069e-15, 0, -0.0329416, -0.800148 )
 visible = false
 mesh = SubResource( 3 )
 
@@ -50,7 +50,7 @@ mesh = SubResource( 3 )
 shape = SubResource( 4 )
 
 [node name="WallDown" type="MeshInstance" parent="."]
-transform = Transform( 3, 0, -4.37114e-08, -1.31134e-07, 1.91069e-15, -1, 0, 1, 1.91069e-15, 0, -0.415862, 0.908513 )
+transform = Transform( 3, 0, -4.37114e-08, -1.31134e-07, 1.91069e-15, -1, 0, 1, 1.91069e-15, 0, 0.0723464, 0.908513 )
 visible = false
 mesh = SubResource( 3 )
 
@@ -60,15 +60,16 @@ mesh = SubResource( 3 )
 shape = SubResource( 4 )
 
 [node name="PlayerCharacter1" parent="." instance=ExtResource( 2 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.23935, -1.31339, -0.236137 )
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 1, -1.7318, -0.775552, -0.242502 )
 
 [node name="PlayerCharacter2" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -0.581184, -1.36947, -0.298869 )
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -0.581184, -0.881262, -0.298869 )
 
 [node name="PlayerCharacter3" parent="." instance=ExtResource( 6 )]
-transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.123044, -1.14969, -0.44686 )
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.123044, -0.661482, -0.44686 )
 
 [node name="Snake1" parent="." instance=ExtResource( 7 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 1.23488, -1.38943, -0.260673 )
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 1.23488, -0.901222, -0.260673 )
 
-[connection signal="scene_changed" from="PlayerCharacter1" to="." method="_on_PlayerCharacter_scene_changed"]
+[node name="Timer" type="Timer" parent="."]
+autostart = true
