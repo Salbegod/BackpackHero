@@ -1,10 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/BeatEmUp/Backgrounds/forest_clearing__f2u_bg__by_barbull_ddsggkp-350t.jpg" type="Texture" id=1]
 [ext_resource path="res://Scenes/Character1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/Scene.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/Character2.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Character2.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/Character3.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Prefabs/Snake.tscn" type="PackedScene" id=7]
 
@@ -65,7 +64,6 @@ transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.23935, -1.31339, -0.2
 
 [node name="PlayerCharacter2" parent="." instance=ExtResource( 4 )]
 transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -0.581184, -1.36947, -0.298869 )
-script = ExtResource( 5 )
 
 [node name="PlayerCharacter3" parent="." instance=ExtResource( 6 )]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.123044, -1.14969, -0.44686 )

@@ -2,6 +2,7 @@ extends KinematicBody
 
 const SPEED := 1.5
 const GRAVITY := 9.8
+const ATTACK := preload("res://Prefabs/Player/PlayerAttack.tscn")
 
 var motion := Vector3()
 var animation := ""
@@ -88,3 +89,10 @@ func _set_animation(anim: String) -> void:
 	if animation != anim:
 		animation = anim
 		animator.play(animation)
+
+func player_attack(damage: int) -> void:
+	var attk = ATTACK.instance()
+	attk.strenght = damage
+	get_parent().add_child(attk)
+	attk.transform.origin = get_node("Attack/Spawn").global_transform.origin
+	

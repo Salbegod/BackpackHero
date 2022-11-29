@@ -16,6 +16,8 @@ var facing_right = false
 var playerList = ["PlayerCharacter1", "PlayerCharacter2", "PlayerCharacter3"]
 var randPos := randi()
 
+var health = 50
+
 onready var sprite : Sprite3D = get_node("Sprite3D")
 onready var animator : AnimationPlayer = get_node("AnimationPlayer")
 onready var speed := speed_default
@@ -59,6 +61,15 @@ func _movement(delta) -> void:
 		motion = Vector3(x_direction, 0, z_direction)
 		
 
+func takeDamage(damage: int) -> void:
+	if death:
+		return
+	health = max(0, health - damage)
+	if health <= 0:
+		_death()
+
+func _death() -> void:
+	queue_free()
 
 func _flip() -> void:
 	facing_right = true if player.transform.origin.x > transform.origin.x else false

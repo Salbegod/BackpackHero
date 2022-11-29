@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/BeatEmUp/Player/Personagem2Placeholder/character.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Character2.gd" type="Script" id=2]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.081426, 0.184905, 0.248293 )
@@ -31,6 +32,20 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ Rect2( 7, 0, 31, 52 ), Rect2( 7, 0, 31, 52 ), Rect2( 60, 150, 30, 40 ), Rect2( 100, 150, 40, 40 ), Rect2( 150, 150, 40, 40 ), Rect2( 200, 150, 40, 40 ), Rect2( 250, 150, 30, 40 ), Rect2( 300, 150, 30, 40 ), Rect2( 340, 150, 30, 40 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.8 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 15 ],
+"method": "player_attack"
+} ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -119,6 +134,9 @@ tracks/1/keys = {
 }
 
 [node name="KinematicBody" type="KinematicBody"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource( 2 )
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.266691, 0 )
@@ -136,3 +154,8 @@ anims/Attack = SubResource( 5 )
 anims/Idle = SubResource( 2 )
 anims/RESET = SubResource( 3 )
 anims/Walk = SubResource( 4 )
+
+[node name="Attack" type="Position3D" parent="."]
+
+[node name="Spawn" type="Position3D" parent="Attack"]
+transform = Transform( 0.515684, 0, 0, 0, 0.822857, 0, 0, 0, 1, 0.121572, 0.22348, -0.0190419 )
