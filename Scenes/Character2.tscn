@@ -1,56 +1,56 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/BeatEmUp/Player/Personagem2Placeholder/character.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Character2.gd" type="Script" id=2]
+[ext_resource path="res://assets/BeatEmUp/Player/Personagem2Placeholder/Character2Spritesheet.png" type="Texture" id=3]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.081426, 0.184905, 0.248293 )
 
 [sub_resource type="Animation" id=5]
 resource_name = "Attack"
-length = 1.6
-tracks/0/type = "value"
-tracks/0/path = NodePath("../Sprite3D:texture")
+length = 1.5
+tracks/0/type = "method"
+tracks/0/path = NodePath("..")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("../Sprite3D:region_rect")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Rect2( 7, 0, 31, 52 ), Rect2( 7, 0, 31, 52 ), Rect2( 60, 150, 30, 40 ), Rect2( 100, 150, 40, 40 ), Rect2( 150, 150, 40, 40 ), Rect2( 200, 150, 40, 40 ), Rect2( 250, 150, 30, 40 ), Rect2( 300, 150, 30, 40 ), Rect2( 340, 150, 30, 40 ) ]
-}
-tracks/2/type = "method"
-tracks/2/path = NodePath("..")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0.8 ),
+"times": PoolRealArray( 0.9 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ 15 ],
 "method": "player_attack"
 } ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Sprite3D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../Sprite3D:region_rect")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 110, 20, 100, 190 ), Rect2( 420, 20, 100, 190 ), Rect2( 710, 20, 110, 190 ), Rect2( 100, 230, 140, 190 ), Rect2( 420, 240, 180, 190 ), Rect2( 710, 240, 170, 190 ) ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "Idle"
-length = 2.0
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("../Sprite3D:texture")
@@ -62,7 +62,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ) ]
+"values": [ ExtResource( 3 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("../Sprite3D:region_rect")
@@ -71,10 +71,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ Rect2( 7, 0, 31, 52 ), Rect2( 7, 0, 31, 52 ), Rect2( 100, 0, 40, 52 ), Rect2( 340, 240, 40, 50 ), Rect2( 0, 290, 40, 50 ), Rect2( 50, 290, 40, 50 ), Rect2( 340, 340, 40, 50 ) ]
+"values": [ Rect2( 110, 20, 100, 190 ), Rect2( 720, 20, 100, 190 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -118,7 +118,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ) ]
+"values": [ ExtResource( 3 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("../Sprite3D:region_rect")
@@ -127,10 +127,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.4, 0.8, 1.2, 1.6, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Rect2( 0, 50, 40, 50 ), Rect2( 50, 50, 40, 50 ), Rect2( 100, 50, 40, 50 ), Rect2( 150, 50, 30, 50 ), Rect2( 190, 50, 50, 50 ), Rect2( 240, 50, 50, 50 ), Rect2( 290, 50, 40, 50 ), Rect2( 340, 50, 40, 50 ) ]
+"values": [ Rect2( 110, 20, 100, 190 ), Rect2( 420, 20, 100, 190 ), Rect2( 100, 20, 110, 190 ), Rect2( 420, 20, 100, 190 ), Rect2( 110, 20, 100, 190 ), Rect2( 420, 20, 100, 190 ) ]
 }
 
 [node name="KinematicBody" type="KinematicBody"]
@@ -158,4 +158,4 @@ anims/Walk = SubResource( 4 )
 [node name="Attack" type="Position3D" parent="."]
 
 [node name="Spawn" type="Position3D" parent="Attack"]
-transform = Transform( 0.515684, 0, 0, 0, 0.822857, 0, 0, 0, 1, 0.121572, 0.22348, -0.0190419 )
+transform = Transform( 1.01608, 0, 0, 0, 1.80935, 0, 0, 0, 1, 0.448857, 0.301108, -0.0190419 )

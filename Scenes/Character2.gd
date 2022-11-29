@@ -50,7 +50,7 @@ func _process(delta):
 			
 		
 		_flip()
-		_animations(delta)
+	_animations(delta)
 	
 	
 

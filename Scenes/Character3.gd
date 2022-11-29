@@ -43,7 +43,7 @@ func _process(delta):
 		motion.z = Input.get_axis("ui_up", "ui_down") * speed
 		
 		_flip()
-		_animations()
+	_animations()
 	
 
 
