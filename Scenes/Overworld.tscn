@@ -13,7 +13,7 @@
 [ext_resource path="res://assets/sprites/player/animations/move_down.tres" type="Animation" id=11]
 [ext_resource path="res://assets/sprites/player/animations/idle_down.tres" type="Animation" id=12]
 [ext_resource path="res://assets/sprites/player/animations/idle_left.tres" type="Animation" id=13]
-[ext_resource path="res://assets/sprites/player/healer_m.png" type="Texture" id=14]
+[ext_resource path="res://assets/BeatEmUp/Player/PersonagemPlaceholder/backpack_sprites.png" type="Texture" id=14]
 [ext_resource path="res://Scripts/Scene.gd" type="Script" id=15]
 
 [sub_resource type="TileSet" id=33]
@@ -90,84 +90,84 @@
 [sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 11.5, 13.5 )
 
-[sub_resource type="AtlasTexture" id=1]
-flags = 4
+[sub_resource type="AtlasTexture" id=54]
+flags = 23
 atlas = ExtResource( 14 )
-region = Rect2( 0, 72, 32, 36 )
+region = Rect2( 0, 1038, 509, 519 )
 
-[sub_resource type="AtlasTexture" id=2]
-flags = 4
+[sub_resource type="AtlasTexture" id=55]
+flags = 23
 atlas = ExtResource( 14 )
-region = Rect2( 32, 72, 32, 36 )
+region = Rect2( 509, 1038, 509, 519 )
 
-[sub_resource type="AtlasTexture" id=3]
-flags = 4
+[sub_resource type="AtlasTexture" id=56]
+flags = 23
 atlas = ExtResource( 14 )
-region = Rect2( 64, 72, 32, 36 )
+region = Rect2( 1018, 1038, 509, 519 )
 
-[sub_resource type="AtlasTexture" id=4]
-flags = 4
+[sub_resource type="AtlasTexture" id=66]
+flags = 23
 atlas = ExtResource( 14 )
-region = Rect2( 0, 108, 32, 36 )
+region = Rect2( 0, 1524, 500, 464 )
 
-[sub_resource type="AtlasTexture" id=5]
-flags = 4
+[sub_resource type="AtlasTexture" id=67]
+flags = 23
 atlas = ExtResource( 14 )
-region = Rect2( 32, 108, 32, 36 )
+region = Rect2( 500, 1524, 500, 464 )
 
-[sub_resource type="AtlasTexture" id=6]
-flags = 4
+[sub_resource type="AtlasTexture" id=68]
+flags = 23
 atlas = ExtResource( 14 )
-region = Rect2( 64, 108, 32, 36 )
+region = Rect2( 1000, 1524, 500, 464 )
 
-[sub_resource type="AtlasTexture" id=7]
-flags = 4
+[sub_resource type="AtlasTexture" id=60]
+flags = 23
 atlas = ExtResource( 14 )
-region = Rect2( 0, 36, 32, 36 )
+region = Rect2( 0, 519, 509, 519 )
 
-[sub_resource type="AtlasTexture" id=8]
-flags = 4
+[sub_resource type="AtlasTexture" id=61]
+flags = 23
 atlas = ExtResource( 14 )
-region = Rect2( 32, 36, 32, 36 )
+region = Rect2( 509, 519, 509, 519 )
 
-[sub_resource type="AtlasTexture" id=9]
-flags = 4
+[sub_resource type="AtlasTexture" id=62]
+flags = 23
 atlas = ExtResource( 14 )
-region = Rect2( 64, 36, 32, 36 )
+region = Rect2( 1018, 519, 509, 519 )
 
-[sub_resource type="AtlasTexture" id=10]
-flags = 4
+[sub_resource type="AtlasTexture" id=63]
+flags = 23
 atlas = ExtResource( 14 )
-region = Rect2( 0, 0, 32, 36 )
+region = Rect2( 0, 0, 509, 519 )
 
-[sub_resource type="AtlasTexture" id=11]
-flags = 4
+[sub_resource type="AtlasTexture" id=64]
+flags = 23
 atlas = ExtResource( 14 )
-region = Rect2( 32, 0, 32, 36 )
+region = Rect2( 509, 0, 509, 519 )
 
-[sub_resource type="AtlasTexture" id=12]
-flags = 4
+[sub_resource type="AtlasTexture" id=65]
+flags = 23
 atlas = ExtResource( 14 )
-region = Rect2( 64, 0, 32, 36 )
+region = Rect2( 1018, 0, 509, 519 )
 
 [sub_resource type="SpriteFrames" id=13]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
+"frames": [ SubResource( 54 ), SubResource( 55 ), SubResource( 56 ) ],
 "loop": true,
 "name": "move_down",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"frames": [ SubResource( 66 ), SubResource( 67 ), SubResource( 68 ) ],
 "loop": true,
 "name": "move_left",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"frames": [ SubResource( 60 ), SubResource( 61 ), SubResource( 62 ) ],
 "loop": true,
 "name": "move_right",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
+"frames": [ SubResource( 63 ), SubResource( 64 ), SubResource( 65 ) ],
 "loop": true,
 "name": "move_up",
 "speed": 5.0
@@ -575,8 +575,8 @@ position = Vector2( 511.5, 244.5 )
 shape = SubResource( 14 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="PlayerCharacter"]
-position = Vector2( 511.625, 245.172 )
-scale = Vector2( 0.773439, 0.773439 )
+position = Vector2( 512, 244 )
+scale = Vector2( 0.0824988, 0.0824988 )
 frames = SubResource( 13 )
 animation = "move_down"
 frame = 1
@@ -599,7 +599,7 @@ anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 22 )
 parameters/idle/blend_position = Vector2( 0.030111, -1.19011 )
-parameters/walk/blend_position = Vector2( -0.118859, -0.315589 )
+parameters/walk/blend_position = Vector2( -0.0110935, -0.0172414 )
 
 [node name="UpperTiles" type="TileMap" parent="."]
 tile_set = SubResource( 34 )
