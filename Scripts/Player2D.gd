@@ -12,7 +12,8 @@ func _physics_process(_delta):
 	var movement := input_vector.normalized()
 	
 	move_and_slide(speed * movement)
-	_randomEncounter(_delta)
+	if (movement != Vector2.ZERO):
+		_randomEncounter(_delta)
 	
 
 func _randomEncounter(delta) -> void:
@@ -20,7 +21,7 @@ func _randomEncounter(delta) -> void:
 	walk_timer += delta
 	if walk_timer > rand_range(2,5):
 		chance = rand_range(0, 100)
-		if chance <= 20:
+		if chance <= 50:
 			  emit_signal("scene_changed", "Overworld")
 		
 		walk_timer = 0
