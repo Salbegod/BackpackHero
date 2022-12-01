@@ -57,8 +57,7 @@ func _physics_process(delta):
 
 func _input(event):
 	if event.is_action_pressed("scene_switch"):
-		_on_Player_scene_changed("BeatEmUp")
-		#emit_signal("scene_changed", "BeatEmUp")
+		emit_signal("scene_changed", "BeatEmUp")
 
 func _flip() -> void:
 	if(enable):
@@ -78,7 +77,3 @@ func _set_animation(anim: String) -> void:
 	if animation != anim:
 		animation = anim
 		animator.play(animation)
-
-
-func _on_Player_scene_changed(scene_name):
-	emit_signal("scene_changed", scene_name)

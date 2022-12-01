@@ -8,3 +8,5 @@ script = ExtResource( 2 )
 
 [node name="Overworld" parent="." instance=ExtResource( 1 )]
 scene_name = "scene"
+
+[connection signal="scene_changed" from="Overworld" to="Overworld" method="_on_scene_change"]

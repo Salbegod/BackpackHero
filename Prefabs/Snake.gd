@@ -17,7 +17,7 @@ var playerList = ["PlayerCharacter1", "PlayerCharacter2", "PlayerCharacter3"]
 var randPos := randi()
 
 var health = 50
-
+signal scene_changed(scene_name)
 
 onready var sprite : Sprite3D = get_node("Sprite3D")
 onready var animator : AnimationPlayer = get_node("AnimationPlayer")

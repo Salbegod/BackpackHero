@@ -17,3 +17,9 @@ func _on_PlayerCharacter_scene_changed(scene_name):
 	emit_signal("scene_changed",scene_name)
 
 
+func _on_PlayerCharacter1_scene_changed(scene_name):
+	emit_signal("scene_changed",scene_name)
+
+
+func _on_Snake1_scene_changed(scene_name):
+	emit_signal("scene_changed",scene_name)

@@ -63,7 +63,7 @@ shape = SubResource( 4 )
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 1, -1.7318, -0.775552, -0.242502 )
 
 [node name="PlayerCharacter2" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -1.2911, -0.934561, -0.325207 )
+transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1.2911, -0.934561, -0.325207 )
 
 [node name="PlayerCharacter3" parent="." instance=ExtResource( 6 )]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.123044, -0.661482, -0.44686 )
@@ -73,3 +73,7 @@ transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 1.23488, -0.901222, -0.2
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[connection signal="scene_changed" from="." to="." method="_on_scene_change"]
+[connection signal="scene_changed" from="PlayerCharacter1" to="." method="_on_PlayerCharacter1_scene_changed"]
+[connection signal="scene_changed" from="Snake1" to="." method="_on_Snake1_scene_changed"]

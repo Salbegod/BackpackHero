@@ -3,6 +3,8 @@ extends KinematicBody
 const SPEED := 1.5
 const GRAVITY := 9.8
 const ATTACK := preload("res://Prefabs/Player/PlayerAttack.tscn")
+const DEFAULTTIMER := 0.5
+const DEFAULTCOOLDOWN := 1.0
 
 var motion := Vector3()
 var animation := ""
@@ -13,9 +15,10 @@ onready var animator : AnimationPlayer = get_node("AnimationPlayer")
 onready var speed := SPEED
 
 
-var timer := 0.5
-var cooldown := 1.6
+var timer := DEFAULTTIMER
+var cooldown := DEFAULTCOOLDOWN
 var attacking := false
+var canAttack := true
 
 signal scene_changed(scene_name)
 
@@ -28,7 +31,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
+	print("timer: ", timer)
+	print("cooldown: ", cooldown)
+	print(canAttack)
 	if not is_on_floor():
 		motion.y -= GRAVITY * delta
 		
@@ -39,14 +44,18 @@ func _process(delta):
 		enable = true
 	if(Input.is_action_pressed("Char3")):
 		enable = false
+	if(timer < cooldown):
+		canAttack = true
+	else:
+		canAttack = false
+		timer = DEFAULTTIMER
 	
 	if(enable):
 		motion.x = Input.get_axis("ui_left", "ui_right") * speed
 		motion.z = Input.get_axis("ui_up", "ui_down") * speed
 		
-		if Input.is_action_just_pressed("ui_attack") and timer > 0.3:
+		if Input.is_action_just_pressed("ui_attack") and attacking == false:
 			attacking = true
-			timer = 0
 			
 		
 		_flip()
@@ -96,3 +105,7 @@ func player_attack(damage: int) -> void:
 	get_parent().add_child(attk)
 	attk.transform.origin = get_node("Attack/Spawn").global_transform.origin
 	
+
+
+func _on_Player_scene_changed(scene_name):
+	emit_signal("scene_changed", scene_name)
